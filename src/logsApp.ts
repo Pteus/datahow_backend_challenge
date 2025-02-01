@@ -7,4 +7,8 @@ logsApp.use(express.json());
 
 logsApp.use("/logs", logsRoutes);
 
+logsApp.use((req, res, next) => {
+  res.status(404).send("Route Not Found");
+});
+
 export default logsApp;

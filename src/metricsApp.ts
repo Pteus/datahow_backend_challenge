@@ -5,4 +5,8 @@ const metricsApp = express();
 
 metricsApp.use("/metrics", metricsRoutes);
 
+metricsApp.use((req, res, next) => {
+  res.status(404).send("Route Not Found");
+});
+
 export default metricsApp;
