@@ -6,6 +6,14 @@ This is my solution to the code challenge provided by **DataHow**. The goal of t
 - **POST 5000/logs**: Receives a JSON log entry with IP address information and counts unique IP addresses.
 - **GET 9102/metrics**: Exposes the current count of unique IP addresses in a Prometheus-compatible format.
 
+**Technologies Used:**
+- **Node.js**:The framework used to create the server.
+- **Express**:The framework for routing and handling HTTP requests.
+- **Prometheus client**:For exposing the metric of unique IP addresses.
+- **TypeScript** The programming language used for development.
+- **Jest**: For integration testing.
+
+
 ---
 
 ### How to Run
