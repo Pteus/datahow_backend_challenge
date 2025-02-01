@@ -1,8 +1,15 @@
 import { Request, Response } from "express";
-import { getUniqueIpCount } from "../services/ipServices";
+import { register } from "prom-client";
 
-export const getMetrics = (req: Request, res: Response): void => {
-  const ips = getUniqueIpCount();
+// if we need default metrics recommended by Prometheus
+// collectDefaultMetrics();
 
-  res.status(200).send({ status: "success", message: "unique ips: " + ips });
+export const getMetrics = async (
+  req: Request,
+  res: Response,
+): Promise<void> => {
+  res.setHeader("Content-Type", register.contentType);
+  // register.metrics() sends back the metrics
+  // prom-client wires the Counter to the metrics()
+  res.status(200).send(await register.metrics());
 };
