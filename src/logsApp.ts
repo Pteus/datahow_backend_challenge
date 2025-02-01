@@ -1,12 +1,10 @@
 import express from "express";
+import logsRoutes from "./routes/logsRoutes";
 
-const logsApp = express()
+const logsApp = express();
 
 logsApp.use(express.json());
 
-logsApp.post("/logs", (req, res) => {
-    console.log('logs');
+logsApp.use("/logs", logsRoutes);
 
-    res.status(200).json({ status: 'success', message: 'Log entry received' });
-})
-export default logsApp
+export default logsApp;
