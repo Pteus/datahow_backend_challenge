@@ -1,8 +1,11 @@
 import logsApp from "./logsApp";
 import metricsApp from "./metricsApp";
+import dotenv from "dotenv";
 
-const PORT_LOGS = 5000;
-const PORT_METRICS = 9102;
+dotenv.config();
+
+const PORT_LOGS = process.env.PORT_LOGS || 5000;
+const PORT_METRICS = process.env.PORT_METRICS || 9102;
 
 logsApp.listen(PORT_LOGS, () => {
   console.log(`Logs service listening on http://localhost:${PORT_LOGS}/logs`);
