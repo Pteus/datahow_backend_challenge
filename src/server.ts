@@ -5,10 +5,11 @@ const PORT_LOGS = 5000;
 const PORT_METRICS = 9102;
 
 logsApp.listen(PORT_LOGS, () => {
-    console.log(`Server listening on http://localhost:${PORT_LOGS}/logs`);
+  console.log(`Logs service listening on http://localhost:${PORT_LOGS}/logs`);
 });
 
 metricsApp.listen(PORT_METRICS, () => {
-    console.log(`Prometheus metrics exposed on http://localhost:${PORT_METRICS}/metrics`);
+  console.log(
+    `Prometheus metrics exposed on http://localhost:${PORT_METRICS}/metrics`,
+  );
 });
-
